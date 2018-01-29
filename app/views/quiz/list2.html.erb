@@ -1,0 +1,16 @@
+<div>
+  <% @ques.each do |c| %>
+  <% @count+=1 %>
+  <b><%= link_to "Question"+@count.to_s, {:action => :edit2, :id => c.id},:style => 'color:blue' %></b>
+  <br/>
+  <br/>
+  <% end %>
+</div>
+
+<div>
+  <%=link_to "Pause Quiz", "/quizzes", :style => 'color:red'%>
+</div>
+<br/>
+<div>
+  <%=link_to "Submit Quiz", "/quizzes/score2", :style =>'color:green'%>
+</div>

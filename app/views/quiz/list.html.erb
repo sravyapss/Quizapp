@@ -1,0 +1,52 @@
+<style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 12px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+</style>
+<table>
+  <tr>
+    <td><h3 style="color:blue">Quiz on Cricket</h3></td>
+    <td><%= link_to '<button type="button">Start New Quiz </button>'.html_safe, "/quizzes/quiz1/start" %></td>
+    <td><%= link_to '<button type="button">Continue Previous Quiz </button>'.html_safe, "/quizzes/quiz1/continue"%></td>
+  </tr>
+  <tr>
+    <td><h3 style="color:green">Quiz on Football</td>
+    <td><%= link_to '<button type="button">Start New Quiz </button>'.html_safe, "/quizzes/quiz2/start" %></td>
+      <td><%= link_to '<button type="button">Continue Previous Quiz </button>'.html_safe, "/quizzes/quiz2/continue" %></td>
+  </tr>
+  <tr>
+    <td><h3 style="color:red">Quiz on Bollywood</td>
+    <td><%= link_to '<button type="button">Start New Quiz </button>'.html_safe, "/quizzes/quiz3/start" %></td>
+    <td><%= link_to '<button type="button">Continue Previous Quiz </button>'.html_safe, "/quizzes/quiz3/continue" %></td>
+  </tr>
+  <tr>
+    <td><h3 style="color:violet">Quiz on Hollywood</td>
+    <td><%= link_to '<button type="button">Start New Quiz </button>'.html_safe, "/quizzes/quiz4/start" %></td>
+    <td><%= link_to '<button type="button">Continue Previous Quiz </button>'.html_safe, "/quizzes/quiz4/continue" %></td>
+  </tr>
+</table>
+<br/>
+<br/>
+<div>
+  <%= link_to '<button type="button">View Statistics</button>' .html_safe, "/quizzes/analysis", :style => 'color:hotpink' %>
+</div>
+<br/>
+<div>
+  <%=link_to '<button type="button">LeaderBoard</button>' .html_safe, "/quizzes/leaderboard" %>
+</div>
+<br/>
+<div>
+<%= link_to "Logout", "/logout", :style =>'color:red' %>
+</div>

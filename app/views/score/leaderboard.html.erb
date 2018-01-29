@@ -1,0 +1,203 @@
+<style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+</style>
+<%= link_to "Logout", "/logout", :style => 'color:red'  %>
+<br/>
+<br/>
+<h2 style="color:green">Cricket Subgenre</h2>
+<table>
+  <tr>
+    <th>UserName</th>
+    <th>Score</th>
+  </tr>
+  <% @score1.each do |s| %>
+  <tr>
+    <td><%= User.find(s.user_id).name %></td>
+    <% if (s.score1<0) %>
+    <td>0</td>
+    <% else %>
+    <td><%= s.score1 %></td>
+    <% end %>
+  </tr>
+  <% end %>
+</table>
+<br/>
+<br/>
+<h2 style="color:green">Football Subgenre</h2>
+<table>
+  <tr>
+    <th>User Name</th>
+    <th>Score</th>
+  </tr>
+  <% @score2.each do |s| %>
+  <tr>
+    <td><%= User.find(s.user_id).name %></td>
+    <% if (s.score2<0) %>
+    <td>0</td>
+    <% else %>
+    <td><%= s.score2 %></td>
+    <% end %>
+  </tr>
+  <% end %>
+</table>
+<br/>
+<br/>
+<h2 style="color:green">Bollywood Subgenre</h2>
+<table>
+  <tr>
+    <th>User Name</th>
+    <th>Score</th>
+  </tr>
+  <% @score3.each do |s| %>
+  <tr>
+    <td><%= User.find(s.user_id).name %></td>
+    <% if (s.score3<0) %>
+    <td>0</td>
+    <% else %>
+    <td><%= s.score3 %></td>
+    <% end %>
+  </tr>
+  <% end %>
+</table>
+<br/>
+<br/>
+<h2 style="color:green">Hollywood Subgenre</h2>
+<table>
+  <tr>
+    <th>User Name</th>
+    <th>Score</th>
+  </tr>
+  <% @score4.each do |s| %>
+  <tr>
+    <td><%= User.find(s.user_id).name %></td>
+    <% if (s.score4<0) %>
+    <td>0</td>
+    <% else %>
+    <td><%= s.score4 %></td>
+    <% end %>
+  </tr>
+  <% end %>
+</table>
+<br/>
+<br/>
+<h2 style="color:green">Sports Genre</h2>
+<table>
+  <tr>
+    <th>User Name</th>
+    <th>Score</th>
+  </tr>
+  <% @score5.each do |s| %>
+  <tr>
+    <td><%= User.find(s.user_id).name %></td>
+    <% if (s.score1<0 && s.score2<0) %>
+    <td>0</td>
+    <% elsif(s.score1<0) %>
+    <td><%= s.score2 %></td>
+    <% elsif(s.score2<0) %>
+    <td><%= s.score1 %></td>
+    <% else %>
+    <td><%= s.score2+s.score1 %></td>
+    <% end %>
+  </tr>
+  <% end %>
+</table>
+<br/>
+<br/>
+<h2 style="color:green">Movies Genre</h2>
+<table>
+  <tr>
+    <th>User Name</th>
+    <th>Score</th>
+  </tr>
+  <% @score6.each do |s| %>
+  <tr>
+    <td><%= User.find(s.user_id).name %></td>
+    <% if (s.score3<0 && s.score4<0) %>
+    <td>0</td>
+    <% elsif(s.score3<0) %>
+    <td><%= s.score4 %></td>
+    <% elsif(s.score4<0) %>
+    <td><%= s.score3 %></td>
+    <% else %>
+    <td><%= s.score3+s.score4 %></td>
+    <% end %>
+  </tr>
+  <% end %>
+</table>
+<br/>
+<br/>
+<h2 style="color:green">All Quizzes</h2>
+<table>
+  <tr>
+    <th>User Name</th>
+    <th>Score</th>
+  </tr>
+  <% @score7.each do |s| %>
+  <tr>
+    <td><%= User.find(s.user_id).name %></td>
+    <% if s.score1<0 && s.score2<0 && s.score3<0 && s.score4<0%>
+      <td>0</td>
+    <% elsif s.score1<0 && s.score2<0 && s.score3<0 && s.score4>=0%>
+      <td><%=s.score4%></td>
+    <% elsif s.score1<0 && s.score2<0 && s.score3>=0 && s.score4<0%>
+      <td><%=s.score3%></td>
+    <% elsif s.score1<0 && s.score2>=0 && s.score3<0 && s.score4<0%>
+      <td><%=s.score2%></td>
+    <% elsif s.score1>=0 && s.score2<0 && s.score3<0 && s.score4<0%>
+      <td><%=s.score1%></td>
+    <% elsif s.score1<0 && s.score2<0 && s.score3>=0 && s.score4>=0%>
+      <td><%=s.score3+s.score4%></td>
+    <% elsif s.score1<0 && s.score2>=0 && s.score3<0 && s.score4>=0%>
+      <td><%=s.score2+s.score4%></td>
+    <% elsif s.score1>=0 && s.score2<0 && s.score3>=0 && s.score4<0%>
+      <td><%=s.score1+s.score3%></td>
+    <% elsif s.score1>=0 && s.score2>=0 && s.score3<0 && s.score4<0%>
+      <td><%=s.score2+s.score1%></td>
+
+    <% elsif s.score1>=0 && s.score2>=0 && s.score3<0 && s.score4>=0%>
+      <td><%=s.score2+s.score4+s.score1%></td>
+    <% elsif s.score1>=0 && s.score2<0 && s.score3>=0 && s.score4>=0%>
+      <td><%=s.score3+s.score4+s.score1%></td>
+    <% elsif s.score1<0 && s.score2>=0 && s.score3>=0 && s.score4>=0%>
+      <td><%=s.score2+s.score4+s.score3%></td>
+    <% elsif s.score1>=0 && s.score2>=0 && s.score3>=0 && s.score4<0%>
+      <td><%=s.score2+s.score3+s.score1%></td>
+      <% elsif s.score1>=0 && s.score2>=0 && s.score3>=0 && s.score4<0%>
+        <td><%=s.score2+s.score3+s.score1%></td>
+      <%else%>
+      <td><%=s.score1+s.score2+s.score3+s.score4 %></td>
+    <%end%>
+
+
+
+  </tr>
+  <% end %>
+</table>
+<br/>
+<br/>
+<% if User.find(session[:user_id]).user_type=="user" %>
+<div>
+  <%= link_to "Home Page", "/quizzes", :style => 'color:blue' %>
+</div>
+<br/>
+<% end %>
+<% if User.find(session[:user_id]).user_type=="admin" %>
+<div>
+  <%=link_to "View all Questions ",questions_url, :style =>'color:blue'%>
+</div>
+<br/>
+<% end %>

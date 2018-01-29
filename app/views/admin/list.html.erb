@@ -1,0 +1,169 @@
+<style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+</style>
+
+<h3><%= link_to "List Of Users", "/users/list", :style => 'color:pink' %></h3>
+<br/>
+<h2 style="color:green">All Questions</h2>
+<div>
+  <h3>Cricket</h3>
+  <table>
+  <% @questions1.each do |c| %>
+  <tr>
+    <td><%= c.question1 %></td>
+    <% if c.answer1==1 %>
+    <td style="color:green"><%= c.option1 %></td>
+    <% else %>
+    <td><%= c.option1 %></td>
+    <%end%>
+    <% if c.answer2==1 %>
+    <td style="color:green"><%= c.option2 %></td>
+    <% else %>
+    <td><%= c.option2 %></td>
+    <%end%>
+    <% if c.answer3==1 %>
+    <td style="color:green"><%= c.option3 %></td>
+    <% else %>
+    <td><%= c.option3 %></td>
+    <%end%>
+    <% if c.answer4==1 %>
+    <td style="color:green"><%= c.option4 %></td>
+    <% else %>
+    <td><%= c.option4 %></td>
+    <%end%>
+    <td><%= link_to "Edit" , {:action => 'edit',:id => c.id}, :style=>'color:blue' %></td>
+    <td><%= link_to "Delete", {:action => 'delete', :id => c.id}, :style => 'color:red',:confirm => "Are you sure you want to delete this question?"%></td>
+  </tr>
+  <% end %>
+</table>
+</div>
+<br/>
+<br/>
+<div>
+  <h3>FootBall</h3>
+  <table>
+  <% @questions2.each do |c| %>
+  <tr>
+    <td><%= c.question1 %></td>
+    <% if c.answer1==1 %>
+    <td style="color:green"><%= c.option1 %></td>
+    <% else %>
+    <td><%= c.option1 %></td>
+    <%end%>
+    <% if c.answer2==1 %>
+    <td style="color:green"><%= c.option2 %></td>
+    <% else %>
+    <td><%= c.option2 %></td>
+    <%end%>
+    <% if c.answer3==1 %>
+    <td style="color:green"><%= c.option3 %></td>
+    <% else %>
+    <td><%= c.option3 %></td>
+    <%end%>
+    <% if c.answer4==1 %>
+    <td style="color:green"><%= c.option4 %></td>
+    <% else %>
+    <td><%= c.option4 %></td>
+    <%end%>
+    <td><%= link_to "Edit" , {:action => 'edit',:id => c.id}, :style=>'color:blue' %></td>
+    <td><%= link_to "Delete", {:action => 'delete', :id => c.id}, :style => 'color:red',:confirm => "Are you sure you want to delete this question?"%></td>
+  </tr>
+  <% end %>
+</table>
+</div>
+<br/>
+<br/>
+<div>
+  <h3>Bollywood</h3>
+  <table>
+  <% @questions3.each do |c| %>
+  <tr>
+    <td><%= c.question1 %></td>
+    <% if c.answer1==1 %>
+    <td style="color:green"><%= c.option1 %></td>
+    <% else %>
+    <td><%= c.option1 %></td>
+    <%end%>
+    <% if c.answer2==1 %>
+    <td style="color:green"><%= c.option2 %></td>
+    <% else %>
+    <td><%= c.option2 %></td>
+    <%end%>
+    <% if c.answer3==1 %>
+    <td style="color:green"><%= c.option3 %></td>
+    <% else %>
+    <td><%= c.option3 %></td>
+    <%end%>
+    <% if c.answer4==1 %>
+    <td style="color:green"><%= c.option4 %></td>
+    <% else %>
+    <td><%= c.option4 %></td>
+    <%end%>
+    <td><%= link_to "Edit" , {:action => 'edit',:id => c.id}, :style=>'color:blue' %></td>
+    <td><%= link_to "Delete", {:action => 'delete', :id => c.id}, :style => 'color:red',:confirm => "Are you sure you want to delete this question?"%></td>
+  </tr>
+  <% end %>
+</table>
+</div>
+<br/>
+<br/>
+<div>
+  <h3>Hollywood</h3>
+  <table>
+  <% @questions4.each do |c| %>
+  <tr>
+    <td><%= c.question1 %></td>
+    <% if c.answer1==1 %>
+    <td style="color:green"><%= c.option1 %></td>
+    <% else %>
+    <td><%= c.option1 %></td>
+    <%end%>
+    <% if c.answer2==1 %>
+    <td style="color:green"><%= c.option2 %></td>
+    <% else %>
+    <td><%= c.option2 %></td>
+    <%end%>
+    <% if c.answer3==1 %>
+    <td style="color:green"><%= c.option3 %></td>
+    <% else %>
+    <td><%= c.option3 %></td>
+    <%end%>
+    <% if c.answer4==1 %>
+    <td style="color:green"><%= c.option4 %></td>
+    <% else %>
+    <td><%= c.option4 %></td>
+    <%end%>
+    <td><%= link_to "Edit" , {:action => 'edit',:id => c.id}, :style=>'color:blue' %></td>
+    <td><%= link_to "Delete", {:action => 'delete', :id => c.id}, :style => 'color:red',:confirm => "Are you sure you want to delete this question?"%></td>
+  </tr>
+  <% end %>
+</table>
+</div>
+<br/>
+<br/>
+<div>
+  <%= link_to "Create a new question", "/questions/create", :style =>'color:blue' %>
+</div>
+<br/>
+<div>
+  <%=link_to "LeaderBoard","/quizzes/leaderboard" , :style => 'color:green'%>
+</div>
+<br/>
+<div>
+<%= link_to "Logout", "/logout", :style => 'color:red' %>
+</div>
+<br/>

@@ -1,0 +1,48 @@
+<style>
+.center {
+    margin: auto;
+    width: 30%;
+    padding: 10px;
+}
+</style>
+<div class="center">
+<%= form_with(model: user, local: true) do |form| %>
+  <% if user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <h1 style="color:blue">Sign Up</h1>
+  <div style="color:green">
+    <%= form.label :Username %>
+    <%= form.text_field :name, id: :user_name, :placeholder => "Enter Username" %>
+  </div>
+  <br/>
+  <div style="color:green">
+    <%= form.label :Email %>
+    <%= form.text_field :email, id: :user_email, :placeholder => "Enter Email Id" %>
+  </div>
+  <br/>
+  <div style="color:green">
+    <%= form.label :Password %>
+    <%= form.password_field :password, id: :user_password,:placeholder => "Enter Password" %>
+  </div>
+  <br/>
+  <div style="color:green">
+    <%= form.label :ConfirmPassword %>
+    <%= form.password_field :password_confirmation, id: :user_password_confirmation, :placeholder => "Confirm Password" %>
+  </div>
+  <br/>
+  <div style="color:green">
+    <%= form.submit "Sign Up"%>
+  </div>
+<% end %>
+<br/>
+<%= link_to "Login", login_user_url, :style => 'color:blue'%>
+</div>

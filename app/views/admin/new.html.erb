@@ -1,0 +1,71 @@
+<div>
+<%if flash[:alert] %>
+<p id="notice"><%= flash[:alert] %> </p>
+<%end%>
+<%=form_tag do %>
+  <h2 style="color:green">Create Question</h2>
+  <div>
+    <%=label_tag :subgenre_name, 'SubGenre Name' %>
+    <%= select_tag :subgenre_name, options_for_select(["Cricket","Football","Bollywood","Hollywood"]) %></div><br/>
+  <div>
+    <%=label_tag :question1, 'Question' %>
+    <%=text_field_tag :question1, params[:question1] %>
+  </div><br/>
+
+  <div>
+    <%=label_tag :option1, 'Option1' %>
+    <%=text_field_tag :option1, params[:option1] %>
+  </div><br />
+  <div>
+    <%= label_tag :answer1, "Is the above option a correct answer?" %>
+    <%= select_tag :answer1, options_for_select(["Yes","No"]) %>
+  </div><br/>
+
+  <div>
+    <%=label_tag :option2, 'Option2' %>
+    <%=text_field_tag :option2, params[:option2] %>
+  </div><br />
+  <div>
+    <%= label_tag :answer2, "Is the above option a correct answer?" %>
+    <%= select_tag :answer2, options_for_select(["Yes","No"]) %>
+  </div><br/>
+
+  <div>
+    <%=label_tag :option3, 'Option3' %>
+    <%=text_field_tag :option3, params[:option3] %>
+  </div><br />
+  <div>
+    <%= label_tag :answer3, "Is the above option a correct answer?" %>
+    <%= select_tag :answer3, options_for_select(["Yes","No"]) %>
+  </div><br/>
+  <div>
+    <%=label_tag :option4, 'Option4' %>
+    <%=text_field_tag :option4, params[:option4] %>
+  </div><br />
+  <div>
+    <%= label_tag :answer4, "Is the above option a correct answer?" %>
+    <%= select_tag :answer4, options_for_select(["Yes","No"]) %>
+  </div><br/>
+
+    <div>
+      <%=label_tag :question_type, 'Question Type' %>
+      <%= select_tag :question_type, options_for_select(["single","multiple"]) %></div><br/>
+    <div>
+    <%= submit_tag "Create" %>
+  </div>
+  <br />
+<% end %>
+</div>
+<br/>
+<div>
+  <%= link_to "View all Questions", "/questions", :style=>'color:blue' %>
+</div>
+<br/>
+<div>
+  <%=link_to "LeaderBoard","/quizzes/leaderboard", :style =>'color:green' %>
+</div>
+<br/>
+<div>
+<%= link_to "Logout", "/logout", :style => 'color:red' %>
+</div>
+<br/>

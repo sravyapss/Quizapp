@@ -1,0 +1,36 @@
+<style>
+.center {
+    margin: auto;
+    width: 30%;
+    padding: 10px;
+}
+</style>
+
+<div class="center">
+<%if flash[:alert] %>
+<p id="notice"><%= flash[:alert] %> </p>
+<%end%>
+</div>
+<div class="center">
+<%=form_tag do %>
+  <h2 style="color:blue">Sign In</h2>
+  <div style="color:green">
+    <%=label_tag :name, 'User Name' %>
+    <%=text_field_tag :name, params[:name], :placeholder => "Enter UserName" %>
+  </div><br/>
+  <div style="color:green">
+    <%=label_tag :password, 'Password' %>
+    <%=password_field_tag :password, params[:password], :placeholder => "Enter Password" %>
+  </div><br />
+  <div>
+    <%= submit_tag("Login", :style => 'color:green') %>
+  </div>
+  <br />
+<% end %>
+</div>
+<div class="center">
+  <%= link_to "Sign Up", "/signup", :style => 'color:violet' %>
+</div>
+<div class="center">
+    <%= link_to "Login as Admin", "/login/admin", :style => 'color:blue' %>
+</div>

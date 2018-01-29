@@ -1,0 +1,72 @@
+<div>
+<%if @question3.question_type=="single"%>
+<h2>Single Correct Answer</h2>
+<div>
+<h4><%= @ques3.attempted_question %></h4>
+<%= form_for @ques3, :url => {:action => :submit3, :id => @ques3} do |f| %>
+  <% if @ques3.answer1==1 %>
+  <%= radio_button_tag :answer, "1", true %>&nbsp;<%= @ques3.option1 %><br/>
+  <% else %>
+  <%= radio_button_tag :answer, "1"%>&nbsp;<%= @ques3.option1 %><br/>
+  <% end %>
+  <% if @ques3.answer2==1 %>
+  <%= radio_button_tag :answer, "2", true %>&nbsp;<%= @ques3.option2 %><br/>
+  <% else %>
+  <%= radio_button_tag :answer, "2"%>&nbsp;<%= @ques3.option2 %><br/>
+  <% end %>
+  <% if @ques3.answer3==1 %>
+  <%= radio_button_tag :answer, "3", true %>&nbsp;<%= @ques3.option3 %><br/>
+  <% else %>
+  <%= radio_button_tag :answer, "3"%>&nbsp;<%= @ques3.option3 %><br/>
+  <% end %>
+  <% if @ques3.answer4==1 %>
+  <%= radio_button_tag :answer, "4", true %>&nbsp;<%= @ques3.option4 %><br/>
+  <% else %>
+  <%= radio_button_tag :answer, "4"%>&nbsp;<%= @ques3.option4 %><br/>
+  <% end %>
+  <% if @flag==0 %>
+  <%= f.submit "Submit" %>
+  <% else %>
+  <%= f.submit "Submit",disabled: true %>
+  <% end %>
+  <%= f.submit "Leave this question" %>
+  <% end %>
+</div>
+
+<%else%>
+<h2>Multiple Correct Answer</h2>
+
+<div>
+<h4><%= @ques3.attempted_question %></h4>
+  <%= form_for @ques3, :url => {:action => :submit3, :id => @ques3} do |f| %>
+    <%if @ques3.answer1==1 %>
+    <%= check_box_tag :answer1, true %>&nbsp;<%= @ques3.option1 %><br/>
+    <%else%>
+    <%= check_box_tag :answer1%>&nbsp;<%= @ques3.option1 %><br/>
+    <%end%>
+    <%if @ques3.answer2==1 %>
+    <%= check_box_tag :answer2, true %>&nbsp;<%= @ques3.option2 %><br/>
+    <%else%>
+    <%= check_box_tag :answer2%>&nbsp;<%= @ques3.option2 %><br/>
+    <%end%>
+    <%if @ques3.answer3==1 %>
+    <%= check_box_tag :answer3, true %>&nbsp;<%= @ques3.option3 %><br/>
+    <%else%>
+    <%= check_box_tag :answer3%>&nbsp;<%= @ques3.option3 %><br/>
+    <%end%>
+    <%if @ques3.answer4==1 %>
+    <%= check_box_tag :answer4, true %>&nbsp;<%= @ques3.option4 %><br/>
+    <%else%>
+    <%= check_box_tag :answer4%>&nbsp;<%= @ques3.option4 %><br/>
+    <%end%>
+
+    <% if @flag==0 %>
+    <%= f.submit "Submit" %>
+    <% else %>
+    <%= f.submit "Submit",disabled: true %>
+    <% end %>
+    <%= f.submit "Leave this question" %>
+    <% end %>
+  </div>
+<% end %>
+<br/>

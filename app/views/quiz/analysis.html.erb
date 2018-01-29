@@ -1,0 +1,87 @@
+<style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 10px;
+}
+th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 10px;
+    color: green;
+    font-size: 17px;
+}
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+</style>
+<h3 style="color:blue;text-align:center">Analysis</h3>
+<table style="width:100%">
+  <tr>
+    <th>Quiz</th>
+    <th>Status</th>
+    <th>Score</th>
+  </tr>
+  <tr>
+    <td>Quiz1</td>
+
+      <%if @sco.score1==-1%>
+      <td>Unattempted</td>
+      <td>0</td>
+      <%else%>
+      <td>Attempted</td>
+      <td><%= @sco.score1 %></td>
+      <%end%>
+  </tr>
+  <tr>
+    <td>Quiz2</td>
+      <%if @sco.score2==-1%>
+      <td>Unattempted</td>
+      <td>0</td>
+      <%else%>
+      <td>Attempted</td>
+        <td><%= @sco.score2 %></td>
+      <%end%>
+
+  </tr>
+  <tr>
+    <td>Quiz3</td>
+      <%if @sco.score3==-1%>
+      <td>Unattempted</td>
+      <td>0</td>
+      <%else%>
+      <td>Attempted</td>
+      <td><%= @sco.score3 %></td>
+      <%end%>
+  </tr>
+  <tr>
+    <td>Quiz4</td>
+      <%if @sco.score4==-1%>
+      <td>Unattempted</td>
+      <td>0</td>
+      <%else%>
+      <td>Attempted</td>
+      <td><%= @sco.score4 %></td>
+      <%end%>
+
+  </tr>
+</table>
+<br/>
+<div>
+  <%= link_to "Home Page", "/quizzes", :style=>'color:green' %>
+</div>
+<br/>
+<div>
+  <%= link_to "Logout", "/logout", :style=>'color:red'%>
+</div>
+<br/>
+<div>
+  <%=link_to "LeaderBoard","/quizzes/leaderboard", :style=>'color:green' %>
+</div>
+<br/>

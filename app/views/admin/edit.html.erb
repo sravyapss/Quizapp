@@ -1,0 +1,26 @@
+<h2 style="color:blue">Edit Question</h2>
+<%= form_for @question, :url =>{ :action => "update", :id => @question} do |f| %>
+<p>Subgenre Name: <%= f.select :subgenre_name, ["Cricket","Football","Bollywood","Hollywood"], :selected => @question.subgenre_name %></p>
+<p>Question type: <%= f.select :question_type, ["single","multiple"], :selected => @question.question_type %></p>
+<p>Question: <%= f.text_field 'question1' %></p>
+<p>Option1: <%= f.text_field 'option1' %></p>
+<p>Option2: <%= f.text_field 'option2' %></p>
+<p>Option3: <%= f.text_field 'option3' %></p>
+<p>Option4: <%= f.text_field  'option4' %></p>
+<p>Answer1: <%= f.select :answer1, [1,0], :selected => @question.answer1 %></p>
+<p>Answer2: <%= f.select :answer2, [1,0], :selected => @question.answer2 %></p>
+<p>Answer3: <%= f.select :answer3, [1,0], :selected => @question.answer3 %></p>
+<p>Answer4: <%= f.select :answer4, [1,0], :selected => @question.answer4 %></p>
+<%= f.submit "Save changes" %>
+<% end %>
+<br/>
+<%= link_to 'List Questions', {:action => 'list'}, :style=>'color:blue' %>
+<br/>
+<br/>
+<div>
+  <%=link_to "LeaderBoard","/quizzes/leaderboard", :style => 'color:green' %>
+</div>
+<br/>
+<div>
+<%= link_to "Logout", "/logout", :style=>'color:red' %>
+</div>

@@ -1,0 +1,13 @@
+<ul id = "questions">
+   <% @questions.each do |c| %>
+   <li><%= c.subgenre_name %></li>
+   <li><%= c.question1 %></li>
+   <li><%= c.option1 %></li>
+   <li><%= c.option2 %></li>
+   <li><%= c.option3 %></li>
+   <li><%= c.option4 %></li>
+   <% end %>
+</ul>
+<div>
+<%= link_to "Logout", "/logout" %>
+</div>
